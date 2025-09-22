@@ -1,5 +1,5 @@
 body {
-  background-color: #282c34; /* Or any color you want */
+  background-color: #000818; /* Or any color you want */
   margin: 0; /* Optional: removes default margin */
   padding: 0; /* Optional: removes default padding */
 }
@@ -24,18 +24,18 @@ body {
 hr {
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, #282c34,      /* left side */
-    #282c34 10%,  /* blend left */
+  background-image: linear-gradient(to right, #000818,      /* left side */
+    #000818 10%,  /* blend left */
     #ffffff 50%,     /* center black */
-    #282c34 90%,  /* blend right */
-    #282c34); /* right side */
+    #000818 90%,  /* blend right */
+    #000818); /* right side */
   background-color: transparent; /* Add this */;
   margin: 0;
   padding: 0;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #000818;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -46,7 +46,7 @@ hr {
 }
 
 .blog-post-intro {
-  background-color: #282c34;
+  background-color: #000818;
   min-height: 30vh;
   display: flex;
   flex-direction: column;
