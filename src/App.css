@@ -1,11 +1,18 @@
-body {
-  background-color: #000818; /* Or any color you want */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body { /* Or any color you want */
   margin: 0; /* Optional: removes default margin */
   padding: 0; /* Optional: removes default padding */
 }
 
 .App {
   text-align: center;
+  font-family: dm-sans, sans-serif;
 }
 
 .App-logo {
@@ -24,18 +31,12 @@ body {
 hr {
   border: 0;
   height: 1px;
-  background-image: linear-gradient(to right, #000818,      /* left side */
-    #000818 10%,  /* blend left */
-    #ffffff 50%,     /* center black */
-    #000818 90%,  /* blend right */
-    #000818); /* right side */
   background-color: transparent; /* Add this */;
   margin: 0;
   padding: 0;
 }
 
 .App-header {
-  background-color: #000818;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -45,20 +46,21 @@ hr {
   color: white;
 }
 
-.blog-post-intro {
-  background-color: #000818;
-  min-height: 30vh;
+.section {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  margin-top: 25vh;
-  margin-bottom: 25vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.blog-post-intro p {
+.section p {
   max-width: calc(80vw - 40px);
   line-height: 1.5;
 }
@@ -81,7 +83,6 @@ hr {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
   position: fixed;
   top: 0;
   width: 100%;
@@ -98,7 +99,7 @@ hr {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 16px 20px;
   text-decoration: none;
 }
 
@@ -111,3 +112,8 @@ hr {
   background-color: #04AA6D;
 }
 
+.stars-bg {
+  position: absolute;
+  inset: 0;         /* shorthand for top: 0; right: 0; bottom: 0; left: 0; */
+  z-index: 0;
+}

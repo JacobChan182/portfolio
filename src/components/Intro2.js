@@ -1,6 +1,6 @@
 function Intro2() {
     return (
-        <div className="blog-post-intro">
+        <div className="section">
             <h2>Personal Interests</h2>
             <div>
                 <p>Aside from my career-based interests, I enjoy listening to pop punk music (blink-182, Sum 41, Neck Deep, etc.),

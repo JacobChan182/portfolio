@@ -1,6 +1,6 @@
 function Intro1() {
     return (
-        <div className="blog-post-intro">
+        <div className="section">
             <h2>About Me</h2>
             <div>
                 <p>Welcome to my portfolio! My name is Jacob Domingo Chan and I am currently a student at the University of Toronto.

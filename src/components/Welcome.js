@@ -1,4 +1,4 @@
-import logo from './logo.webp';
+import logo from './images/prague.jpg';
 
 function Welcome() {
     return (
