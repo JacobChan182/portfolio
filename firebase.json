@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "public": "./build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "github": {
+      "repo": "jacobchan182/portfolio",
+      "branch": "main" // or specify your desired branch
+    }
+  }
+}

@@ -1,23 +1,25 @@
-import logo from './logo.svg'; 
-import {Aurora} from './components/Aurora';
+import React from 'react';
+import Home from './pages/home';
+import Contact from './pages/contact';
+import FunCorner from './pages/fun-corner';
 import './App.css';
-import Welcome from './components/Welcome';
-import Footer from './components/Footer';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Aurora from './components/Aurora';
 import Nav from './components/Nav';
-import Intro1 from './components/Intro1';
-import Intro2 from './components/Intro2';
-import Intro3 from './components/Intro3';
-import FullPageScroll from './components/FullPageScroll';
+
 
 function App() {
   return (
-    <div>
+    <Router>
       <Aurora />
       <Nav />
-      <FullPageScroll />
-      <Footer />
-    </div>
-  );
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/fun-corner" element={<FunCorner />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App;

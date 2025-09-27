@@ -37,3 +37,4 @@ export const Aurora = () => {
         </motion.section>
     );
 }
+export default Aurora;

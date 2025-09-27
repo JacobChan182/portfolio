@@ -1,4 +1,4 @@
-import logo from './images/prague.jpg';
+import logo from '../images/prague.jpg';
 
 function Welcome() {
     return (
