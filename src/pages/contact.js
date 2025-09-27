@@ -1,27 +1,59 @@
-import Aurora from '../components/Aurora';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
-import ContactCard from '../components/portfolioHome/ContactCard';
+import React, { useState, useEffect } from "react";
+import { Slide } from "@mui/material";
+import ContactCard from "../components/portfolioContact/ContactCard";
 
-export default function Contact () {
-    return (
-      <header className="App-header">
-        <h1>Feel free to email or connect with me on LinkedIn!</h1>    
-          <div
-          style={{
-            minHeight: "2vh",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "24px",
-            justifyContent: "center",
-            alignItems: "center",
-            padding: "40px",
-          }}
+export default function Contact() {
+  const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    setChecked(true);
+  }, []);
+
+  const cards = [
+    {
+      platform: "linkedin",
+      name: "Jacob Chan",
+      link: "https://www.linkedin.com/in/jacobchan182",
+    },
+    {
+      platform: "github",
+      name: "JacobChan182",
+      link: "https://github.com/jacobchan182",
+    },
+    {
+      platform: "email",
+      name: "jacob.chan@mail.utoronto.ca",
+      link: "mailto:jacob.chan@mail.utoronto.ca",
+    },
+  ];
+
+  return (
+    <header className="App-header">
+      <h1>Feel free to email or connect with me on LinkedIn!</h1>
+      <div
+        style={{
+          minHeight: "2vh",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: "24px",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "40px",
+        }}
+      >
+        {cards.map((card, index) => (
+          <Slide
+            key={card.platform}
+            direction="up"
+            in={checked}
+            timeout={300 + index * 200}
           >
-          <ContactCard platform="linkedin" name="Jacob Chan" link="https://www.linkedin.com/in/jacobchan182"/>
-          <ContactCard platform="github" name="JacobChan182" link="https://github.com/jacobchan182"/>
-          <ContactCard platform="email" name="jacob.chan@mail.utoronto.ca" link="mailto:jacob.chan@mail.utoronto.ca"/>
-          </div>
-      </header>
+            <div>
+              <ContactCard {...card} />
+            </div>
+          </Slide>
+        ))}
+      </div>
+    </header>
   );
 }

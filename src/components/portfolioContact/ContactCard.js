@@ -2,6 +2,8 @@ import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import "./ContactCard.css";
+import { Slide, Box } from "@mui/material";
+
 
 const icons = {
   linkedin: <FaLinkedin />,
@@ -16,7 +18,7 @@ const colors = {
 };
 
 const ContactCard = ({ platform, name, link, username }) => {
-  return (
+  return (  
     <div className="contact-card">
       <a
         href={link}
