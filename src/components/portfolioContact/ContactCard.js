@@ -2,6 +2,7 @@ import React from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import "./ContactCard.css";
+import { Slide, Box } from "@mui/material";
 
 
 const icons = {
