@@ -29,7 +29,7 @@ export default function Contact() {
 
   return (
     <header className="App-header">
-      <h1>Feel free to email or connect with me on LinkedIn!</h1>
+      <h1>Let's connect!</h1>
       <div
         style={{
           minHeight: "2vh",

@@ -28,7 +28,7 @@ export default function FullPageScroll() {
 
     setTimeout(() => {
       isScrolling.current = false;
-    }, 25); // debounce time
+    }, 200); // debounce time
   };
 
   React.useEffect(() => {
