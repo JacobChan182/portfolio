@@ -1,10 +1,9 @@
-import logo from '../images/prague.jpg';
+import logo from '../images/jclogo.png';
 
 function Welcome() {
     return (
         <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Jacob Chan</h1>
+        <img src={logo} className="App-logo" alt="logo" style={{ width: "800px", height: "auto" }}/>
         </header>
     );
 }
