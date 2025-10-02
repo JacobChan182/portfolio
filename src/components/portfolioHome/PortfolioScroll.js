@@ -3,12 +3,14 @@ import Welcome from './Welcome';
 import Intro1 from './Intro1';
 import Intro2 from './Intro2';
 import Intro3 from './Intro3';
+import Intro4 from './Intro4';
 
 const sections = [
   <Welcome key="welcome" />,
   <Intro1 key="intro1" />,
   <Intro2 key="intro2" />,
   <Intro3 key="intro3" />,
+  <Intro4 key="intro4" />
 ];
 
 export default function FullPageScroll() {
@@ -28,7 +30,7 @@ export default function FullPageScroll() {
 
     setTimeout(() => {
       isScrolling.current = false;
-    }, 200); // debounce time
+    }, 300); // debounce time (ms)
   };
 
   React.useEffect(() => {
