@@ -4,7 +4,7 @@ function Nav() {
     return (
         <nav className="main-nav">
             <ul>
-                <li className="title"><Link to="/">Jacob Chan</Link></li>
+                <li className="title"><Link to="/">Home</Link></li>
                 <div className="nav-links">
                     <li><Link to="/contact">Contact</Link></li>
                     <li><Link to="/fun-corner">Fun Corner</Link></li>

@@ -8,7 +8,7 @@ function Intro2() {
 
 <p>I love music. I’m a fan of pop punk (blink-182, Sum 41, Neck Deep, etc.) and a self-taught drummer, guitarist, bassist, and music producer. You can find a couple of my samples in SoundCloud. </p>
 
-<p>I love working out. I swam competitively in high school and now swim with the University of Toronto Master’s Swim Club. I also find time every week to lift weights with my friends.</p>
+<p>I love working out. I swam competitively from grades 2 to 12 and I now swim with the University of Toronto Masters Swim Club. I also find time every week to lift weights with my friends.</p>
 
 
 

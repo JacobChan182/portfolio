@@ -8,9 +8,9 @@ import Intro4 from './Intro4';
 const sections = [
   <Welcome key="welcome" />,
   <Intro1 key="intro1" />,
+  <Intro4 key="intro4" />,
   <Intro2 key="intro2" />,
   <Intro3 key="intro3" />,
-  <Intro4 key="intro4" />
 ];
 
 export default function FullPageScroll() {
