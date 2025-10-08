@@ -1,11 +1,10 @@
-import Footer from '../components/Footer';
-//import FullPageScroll from '../components/portfolioHome/PortfolioScroll';
-import WorkInProgress from '../components/funCorner/WorkInProgress';
+//import WorkInProgress from '../components/funCorner/WorkInProgress';
+//import CounterStrikeStats from '../components/funCorner/CounterStrikeStats';
+import FunCornerScroll from '../components/funCorner/FunCornerScroll';
 export default function FunCorner () {
     return (
     <div>
-      <WorkInProgress />
-      <Footer />
+      <FunCornerScroll />
     </div>
   );
 }
