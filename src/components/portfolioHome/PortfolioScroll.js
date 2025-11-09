@@ -4,10 +4,12 @@ import Intro1 from './Intro1';
 import Intro2 from './Intro2';
 import Intro3 from './Intro3';
 import Intro4 from './Intro4';
+import ProjectsShowcase from "./ProjectsShowcase";
 
 const sections = [
   <Welcome key="welcome" />,
   <Intro1 key="intro1" />,
+  <ProjectsShowcase key="projects-showcase" />,
   <Intro4 key="intro4" />,
   <Intro2 key="intro2" />,
   <Intro3 key="intro3" />,
