@@ -1,10 +1,11 @@
-//import WorkInProgress from '../components/funCorner/WorkInProgress';
-//import CounterStrikeStats from '../components/funCorner/CounterStrikeStats';
-import FunCornerScroll from '../components/funCorner/FunCornerScroll';
+import WorkInProgress from '../components/funCorner/WorkInProgress';
+import CounterStrikeStats from '../components/funCorner/CounterStrikeStats';
+
 export default function FunCorner () {
     return (
     <div>
-      <FunCornerScroll />
+      <CounterStrikeStats />
+      <WorkInProgress />
     </div>
   );
 }
