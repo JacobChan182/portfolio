@@ -2,6 +2,7 @@ import React, { useEffect, useMemo } from "react";
 import { motion, useMotionTemplate, useMotionValue, animate } from "framer-motion";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import Welcome from "./portfolioHome/Welcome";
 
 export const Aurora = () => {
     const radialColors = useMemo(

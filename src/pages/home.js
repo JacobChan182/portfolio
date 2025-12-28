@@ -10,6 +10,7 @@ export default function Home () {
     return (
     <div>
       <Welcome />
+      <div style={{ height: '100vh' }} /> {/* Spacer for fixed Welcome component */}
       <Intro1 />
       <ProjectsShowcase />
       <Intro4 />
