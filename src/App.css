@@ -6,6 +6,26 @@ html, body {
   overflow-x: hidden;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 body { /* Or any color you want */
   margin: 0; /* Optional: removes default margin */
   padding: 0; /* Optional: removes default padding */
@@ -152,16 +172,4 @@ hr {
 
 .stats-section a {
   color: #F84982;
-}
-
-.footer {
-  background-color: rgba(0, 3, 24, 1);
-  padding: 20px;
-  text-align: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  z-index: 1;
 }
