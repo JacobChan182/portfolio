@@ -34,6 +34,7 @@ export default function ProjectsShowcase() {
       return obs;
     });
     return () => observers.forEach((obs) => obs?.disconnect());
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- rowRefs is derived from stable refs
   }, [rowRef0, rowRef1, rowRef2]);
 
   useEffect(() => {
@@ -87,12 +88,16 @@ export default function ProjectsShowcase() {
           <ProjectBoxCarousel slides={crashCourseSlides} />
         </div>
         <div className="project-screenshot-wrap">
-          <img ref={screenshotRefs[0]} className="project-screenshot" src={crashScreenshot} alt="Crash Course" />
+          <a target="_blank" rel="noopener noreferrer" href="http://crash-course-19cb4.web.app/" className="project-screenshot-link">
+            <img ref={screenshotRefs[0]} className="project-screenshot" src={crashScreenshot} alt="Crash Course" />
+          </a>
         </div>
       </div>
       <div ref={rowRef1} className={`projects-showcase-row ${visibleRows[1] ? "projects-showcase-row--visible" : ""}`}>
         <div className="project-screenshot-wrap">
-          <img ref={screenshotRefs[1]} className="project-screenshot" src={HRScreenshot} alt="HiReady Continued" />
+          <a target="_blank" rel="noopener noreferrer"href="http://hi-ready-continued.vercel.app" className="project-screenshot-link">
+            <img ref={screenshotRefs[1]} className="project-screenshot" src={HRScreenshot} alt="HiReady Continued" />
+          </a>
         </div>
         <div
           className="section-box section-box--narrow section-box--carousel"
@@ -109,7 +114,9 @@ export default function ProjectsShowcase() {
           <ProjectBoxCarousel slides={flusherSlides} />
         </div>
         <div className="project-screenshot-wrap">
-          <img ref={screenshotRefs[2]} className="project-screenshot" src={flusherScreenshot} alt="Flusher Finder" />
+          <a target="_blank" rel="noopener noreferrer" href="http://flusherfinder.web.app" className="project-screenshot-link">
+            <img ref={screenshotRefs[2]} className="project-screenshot" src={flusherScreenshot} alt="Flusher Finder" />
+          </a>
         </div>
       </div>
     </div>

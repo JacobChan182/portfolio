@@ -177,6 +177,17 @@ hr {
   margin: 1rem 0;
 }
 
+.project-screenshot-link {
+  display: block;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.project-screenshot-link:hover {
+  transform: scale(1.034);
+}
+
 .section-box .project-screenshot,
 .project-screenshot-wrap .project-screenshot {
   display: block;
