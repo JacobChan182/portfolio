@@ -5,7 +5,10 @@ import flusherScreenshot from '../images/flusherScreenshot.png';
 import ProjectBoxCarousel from "./ProjectBoxCarousel";
 
 export default function ProjectsShowcase() {
-  const screenshotRefs = [useRef(null), useRef(null), useRef(null)];
+  const screenshotRef0 = useRef(null);
+  const screenshotRef1 = useRef(null);
+  const screenshotRef2 = useRef(null);
+  const screenshotRefs = [screenshotRef0, screenshotRef1, screenshotRef2];
   const [heights, setHeights] = useState([null, null, null]);
 
   useEffect(() => {
@@ -30,7 +33,7 @@ export default function ProjectsShowcase() {
       });
       window.removeEventListener("resize", syncHeights);
     };
-  }, []);
+  }, [screenshotRef0, screenshotRef1, screenshotRef2]);
 
   const crashCourseSlides = [
     <div><h3 key="title">Crash Course - Side Project</h3> <p key="description">Cross-platform application, built for drummers of all skill levels to learn and practice their rudiments</p></div>,
