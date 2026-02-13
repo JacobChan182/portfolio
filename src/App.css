@@ -161,9 +161,82 @@ hr {
   display: block;
   max-width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   outline: 2px solid rgb(88, 88, 88);
+}
+
+/* Project section-box carousel */
+.section-box--carousel {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-box-carousel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.project-box-carousel__track {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  transition: transform 0.3s ease-out;
+}
+
+.project-box-carousel__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 2rem 2.5rem 1rem;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.project-box-carousel__slide h3,
+.project-box-carousel__slide p {
+  margin: 0 0 0.75rem;
+}
+
+.project-box-carousel__slide h3:last-child,
+.project-box-carousel__slide p:last-child {
+  margin-bottom: 0;
+}
+
+.project-box-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 2.5rem 1.25rem;
+  flex-shrink: 0;
+}
+
+.project-box-carousel__dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-box-carousel__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.project-box-carousel__dot:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.project-box-carousel__dot--active {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 768px) {

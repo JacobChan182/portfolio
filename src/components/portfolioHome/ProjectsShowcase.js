@@ -1,5 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
-import screenshot from '../images/placeholder.avif';
+import crashScreenshot from '../images/placeholder.avif';
+import HRScreenshot from '../images/placeholder.avif';
+import flusherScreenshot from '../images/placeholder.avif';
+import ProjectBoxCarousel from "./ProjectBoxCarousel";
 
 export default function ProjectsShowcase() {
   const screenshotRef = useRef(null);
@@ -24,25 +27,47 @@ export default function ProjectsShowcase() {
     };
   }, []);
 
+  const crashCourseSlides = [
+    <div><h3 key="title">Crash Course - Side Project</h3> <p key="description">Cross-platform application, built for drummers of all skill levels to learn and practice their rudiments</p></div>,
+    <p key="p1">React Native, Firebase, Firestore</p>,
+  ];
+
+  const HRSlides = [
+    <div><h3 key="title">HiReady Continued - UoftHacks 13</h3> <p key="description">AI-powered corporate training application that detects trainees learning friction in videos and give trainers actionable insights</p></div>,
+    <p key="p1"> React, Node, Flask, Twelve Labs, Backboard.io, R2</p>,
+  ];
+
+  const flusherSlides = [
+    <div><h3 key="title">Flusher Finder - NewHacks 25</h3> <p key="description">24-hour Hackathon Project that helps users with IBS and other conditions rate and locate accessible and clean restrooms nearby</p></div>,
+    <p key="p1">React Native, Firebase, Firestore</p>,
+  ];
+
   return (
     <div className="section">
       <h1>My Projects</h1>
       <div className="projects-showcase-row">
-        <div ref={boxRef} className="section-box section-box--narrow" style={boxHeight != null ? { height: `${boxHeight}px`, minHeight: `${boxHeight}px` } : undefined}>
-          <p><h3>Crash Course - React Native, Firebase, Firestore</h3></p>
-          <p>Crash Course is a cross-platform application, built for drummers of all skill levels to learn and practice their rudiments</p>
+        <div ref={boxRef} className="section-box section-box--narrow section-box--carousel" style={boxHeight != null ? { height: `${boxHeight}px`, minHeight: `${boxHeight}px` } : undefined}>
+          <ProjectBoxCarousel slides={crashCourseSlides} />
         </div>
         <div className="project-screenshot-wrap">
-          <img ref={screenshotRef} className="project-screenshot" src={screenshot} alt="Crash Course" />
+          <img ref={screenshotRef} className="project-screenshot" src={crashScreenshot} alt="Crash Course" />
         </div>
       </div>
-      <div className="section-box">
-        <p><b>Smoke Trajectory Prediction (In Progress)</b></p>
-        <p>A tool for Counter-Strike that allows players to discover new smoke-grenade lineups by simulating the game's physics</p>
+      <div className="projects-showcase-row">
+        <div className="project-screenshot-wrap">
+          <img ref={screenshotRef} className="project-screenshot" src={HRScreenshot} alt="Smoke Trajectory Prediction" />
+        </div>
+        <div ref={boxRef} className="section-box section-box--narrow section-box--carousel" style={boxHeight != null ? { height: `${boxHeight}px`, minHeight: `${boxHeight}px` } : undefined}>
+          <ProjectBoxCarousel slides={HRSlides} />
+        </div>
       </div>
-      <div className="section-box">
-        <p><b>Flusher Finder (24-hour Hackathon Project)</b></p>
-        <p>A tool for locating and managing flushable items in Minecraft - Built at my first Hackathon, <a href="https://github.com/JacobChan182/FlusherFinder">Newhacks25</a>, this app helps users with IBS and other conditions rate and locate accessible and clean restrooms nearby</p>
+      <div className="projects-showcase-row">
+        <div ref={boxRef} className="section-box section-box--narrow section-box--carousel" style={boxHeight != null ? { height: `${boxHeight}px`, minHeight: `${boxHeight}px` } : undefined}>
+          <ProjectBoxCarousel slides={flusherSlides} />
+        </div>
+        <div className="project-screenshot-wrap">
+          <img ref={screenshotRef} className="project-screenshot" src={flusherScreenshot} alt="Flusher Finder" />
+        </div>
       </div>
     </div>
   );
