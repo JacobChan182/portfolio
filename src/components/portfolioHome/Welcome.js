@@ -1,51 +1,33 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../images/jclogo.png';
 
-function Welcome() {
-    const [isVisible, setIsVisible] = useState(true);
-    const hasScrolledPast = useRef(false);
+const FADE_START = 0;
+const FADE_END = 400; // px scrolled over which logo fades from 1 to 0
+
+function Welcome({ fixed = false }) {
+    const [opacity, setOpacity] = useState(1);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollY = window.scrollY;
-            
-            // If scrolling down past a threshold, hide the hero
-            if (scrollY > 100 && !hasScrolledPast.current) {
-                setIsVisible(false);
-                hasScrolledPast.current = true;
-            }
-        };
-
-        const handleKeyDown = (event) => {
-            // If up arrow is pressed and we've scrolled past, show the hero and scroll to top
-            if (event.key === 'ArrowUp' && hasScrolledPast.current) {
-                event.preventDefault();
-                setIsVisible(true);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                
-                // Reset the flag after scrolling to top completes
-                setTimeout(() => {
-                    hasScrolledPast.current = false;
-                }, 600);
-            }
+            const next = Math.max(0, 1 - (scrollY - FADE_START) / (FADE_END - FADE_START));
+            setOpacity(next);
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
-        window.addEventListener('keydown', handleKeyDown);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('keydown', handleKeyDown);
-        };
+        handleScroll(); // set initial opacity
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const headerClass = fixed ? 'App-header' : 'App-header App-header--inline';
 
     return (
         <header 
-            className="App-header"
+            className={headerClass}
             style={{
-                opacity: isVisible ? 1 : 0,
+                opacity,
                 pointerEvents: 'none',
-                transition: 'opacity 0.5s ease-out',
+                transition: 'opacity 0.15s ease-out',
             }}
         >
             <img 

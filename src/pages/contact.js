@@ -28,7 +28,7 @@ export default function Contact() {
   ];
 
   return (
-    <header className="App-header">
+    <header className="App-header contact-header">
       <h1>Let's connect!</h1>
       <div
         style={{
