@@ -80,8 +80,7 @@ hr {
 }
 
 .section {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,7 +88,7 @@ hr {
   font-size: calc(10px + 2vmin);
   color: white;
   margin: 0;
-  padding: 0;
+  padding: 5rem 0;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
@@ -114,8 +113,71 @@ hr {
   box-sizing: border-box;
 }
 
+.section-box a {
+  color: white;
+}
+
+.section-box a:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.projects-showcase-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: min(72vw, 1080px);
+  margin: 1rem 0;
+  box-sizing: border-box;
+}
+
+.section-box--narrow {
+  flex: 1 1 60%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.projects-showcase-row .project-screenshot-wrap {
+  flex: 0 0 40%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.project-screenshot-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.section-box .project-screenshot,
+.project-screenshot-wrap .project-screenshot {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  outline: 2px solid rgb(88, 88, 88);
+}
+
+@media (max-width: 768px) {
+  .projects-showcase-row {
+    flex-direction: column;
+  }
+  .section-box--narrow,
+  .projects-showcase-row .project-screenshot-wrap {
+    flex: 1 1 auto;
+    max-width: none;
+  }
+}
+
 .contact-section {
-  min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -123,7 +185,7 @@ hr {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 40px;
+  padding: 5rem 40px;
   box-sizing: border-box;
   background-color: rgba(0, 3, 24, 1);
   position: relative;
@@ -354,8 +416,7 @@ hr {
 }
 
 .stats-section {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -363,9 +424,8 @@ hr {
   font-size: calc(10px + 2vmin);
   color: white;
   margin: 0;
-  padding: 0;
+  padding: 5rem 0;
   box-sizing: border-box;
-
 }
 
 .stats-section p {

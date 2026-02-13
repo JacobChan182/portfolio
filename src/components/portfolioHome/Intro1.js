@@ -1,8 +1,8 @@
 function Intro1() {
     return (
         <div className="section">
+                <h1>About Me</h1>
             <div className="section-box">
-                <h2>About Me</h2>
                 <div>
                 <p>My name's Jacob Chan, and I hail from the San Francisco Bay Area. I’m a student at the University of Toronto pursuing a major in Computer Science with a focus on Artificial Intelligence, and a double minor in Statistics and Mathematics.</p>
 <p>Music and coding are two of my passions, and I see a lot of similarities between them. Both feel like creative outlets where I get to build things from scratch, they take a ton of focus, and they’re extremely rewarding when everything finally comes together! </p>
