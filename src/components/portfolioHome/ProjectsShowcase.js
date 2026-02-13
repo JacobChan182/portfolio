@@ -39,7 +39,7 @@ export default function ProjectsShowcase() {
 
   const flusherSlides = [
     <div><h3 key="title">Flusher Finder - NewHacks 25</h3> <p key="description">24-hour Hackathon Project that helps users with IBS and other conditions rate and locate accessible and clean restrooms nearby</p></div>,
-    <p key="p1">React Native, Firebase, Firestore</p>,
+    <p key="p1">React, FastAPI, PostgreSQL, Google Maps API</p>,
   ];
 
   return (
