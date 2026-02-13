@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
-import crashScreenshot from '../images/placeholder.avif';
-import HRScreenshot from '../images/placeholder.avif';
-import flusherScreenshot from '../images/placeholder.avif';
+import crashScreenshot from '../images/crashScreenshot.png';
+import HRScreenshot from '../images/HRScreenshot.png';
+import flusherScreenshot from '../images/flusherScreenshot.png';
 import ProjectBoxCarousel from "./ProjectBoxCarousel";
 
 export default function ProjectsShowcase() {
