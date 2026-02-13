@@ -137,14 +137,13 @@ hr {
   align-items: center;
   gap: 2rem;
   justify-content: center;
-  background: rgba(212, 212, 212, 0.178);
+  background: rgba(255, 255, 255, 0.178);
   padding: 0.5rem 1.25rem;
   border-radius: 9999px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.3);
   outline: 1px solid rgb(99, 99, 99);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  drop-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
 .main-nav__right {
