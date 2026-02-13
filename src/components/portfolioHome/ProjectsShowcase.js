@@ -9,7 +9,32 @@ export default function ProjectsShowcase() {
   const screenshotRef1 = useRef(null);
   const screenshotRef2 = useRef(null);
   const screenshotRefs = [screenshotRef0, screenshotRef1, screenshotRef2];
+  const rowRef0 = useRef(null);
+  const rowRef1 = useRef(null);
+  const rowRef2 = useRef(null);
+  const rowRefs = [rowRef0, rowRef1, rowRef2];
   const [heights, setHeights] = useState([null, null, null]);
+  const [visibleRows, setVisibleRows] = useState([false, false, false]);
+
+  useEffect(() => {
+    const observers = rowRefs.map((ref, i) => {
+      const el = ref.current;
+      if (!el) return null;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          setVisibleRows((prev) => {
+            const next = [...prev];
+            next[i] = entry.isIntersecting;
+            return next;
+          });
+        },
+        { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
+      );
+      obs.observe(el);
+      return obs;
+    });
+    return () => observers.forEach((obs) => obs?.disconnect());
+  }, [rowRef0, rowRef1, rowRef2]);
 
   useEffect(() => {
     const syncHeights = () => {
@@ -54,7 +79,7 @@ export default function ProjectsShowcase() {
   return (
     <div className="section">
       <h1>My Projects</h1>
-      <div className="projects-showcase-row">
+      <div ref={rowRef0} className={`projects-showcase-row ${visibleRows[0] ? "projects-showcase-row--visible" : ""}`}>
         <div
           className="section-box section-box--narrow section-box--carousel"
           style={heights[0] != null ? { maxHeight: heights[0] } : undefined}
@@ -65,7 +90,7 @@ export default function ProjectsShowcase() {
           <img ref={screenshotRefs[0]} className="project-screenshot" src={crashScreenshot} alt="Crash Course" />
         </div>
       </div>
-      <div className="projects-showcase-row">
+      <div ref={rowRef1} className={`projects-showcase-row ${visibleRows[1] ? "projects-showcase-row--visible" : ""}`}>
         <div className="project-screenshot-wrap">
           <img ref={screenshotRefs[1]} className="project-screenshot" src={HRScreenshot} alt="HiReady Continued" />
         </div>
@@ -76,7 +101,7 @@ export default function ProjectsShowcase() {
           <ProjectBoxCarousel slides={HRSlides} />
         </div>
       </div>
-      <div className="projects-showcase-row">
+      <div ref={rowRef2} className={`projects-showcase-row ${visibleRows[2] ? "projects-showcase-row--visible" : ""}`}>
         <div
           className="section-box section-box--narrow section-box--carousel"
           style={heights[2] != null ? { maxHeight: heights[2] } : undefined}
