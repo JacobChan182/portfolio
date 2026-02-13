@@ -124,7 +124,7 @@ hr {
 .projects-showcase-row {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 1.5rem;
   width: 100%;
   max-width: min(72vw, 1080px);
@@ -135,8 +135,11 @@ hr {
 .section-box--narrow {
   flex: 1 1 60%;
   min-width: 0;
+  min-height: 0;
   box-sizing: border-box;
-  overflow: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .projects-showcase-row .project-screenshot-wrap {
@@ -199,9 +202,13 @@ hr {
   overflow: auto;
 }
 
-.project-box-carousel__slide h3,
+.project-box-carousel__slide h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1em;
+}
 .project-box-carousel__slide p {
   margin: 0 0 0.75rem;
+  font-size: 0.93em
 }
 
 .project-box-carousel__slide h3:last-child,

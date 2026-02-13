@@ -18,7 +18,7 @@ export default function ProjectBoxCarousel({ slides }) {
         style={{
           height: `${total * 100}%`,
           transform: `translateY(-${index * (100 / total)}%)`,
-          ['--slides']: total,
+          '--slides': total,
         }}
       >
         {slides.map((slide, i) => (

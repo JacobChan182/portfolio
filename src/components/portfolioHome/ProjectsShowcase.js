@@ -5,25 +5,30 @@ import flusherScreenshot from '../images/flusherScreenshot.png';
 import ProjectBoxCarousel from "./ProjectBoxCarousel";
 
 export default function ProjectsShowcase() {
-  const screenshotRef = useRef(null);
-  const boxRef = useRef(null);
-  const [boxHeight, setBoxHeight] = useState(null);
+  const screenshotRefs = [useRef(null), useRef(null), useRef(null)];
+  const [heights, setHeights] = useState([null, null, null]);
 
   useEffect(() => {
-    const img = screenshotRef.current;
-    const box = boxRef.current;
-    if (!img || !box) return;
-
-    const syncHeight = () => {
-      if (img.offsetHeight > 0) setBoxHeight(img.offsetHeight);
+    const syncHeights = () => {
+      setHeights((prev) =>
+        screenshotRefs.map((ref, i) => {
+          const img = ref.current;
+          return img && img.offsetHeight > 0 ? img.offsetHeight : prev[i];
+        })
+      );
     };
-
-    syncHeight();
-    img.addEventListener('load', syncHeight);
-    window.addEventListener('resize', syncHeight);
+    syncHeights();
+    screenshotRefs.forEach((ref) => {
+      const img = ref.current;
+      if (img) img.addEventListener("load", syncHeights);
+    });
+    window.addEventListener("resize", syncHeights);
     return () => {
-      img.removeEventListener('load', syncHeight);
-      window.removeEventListener('resize', syncHeight);
+      screenshotRefs.forEach((ref) => {
+        const img = ref.current;
+        if (img) img.removeEventListener("load", syncHeights);
+      });
+      window.removeEventListener("resize", syncHeights);
     };
   }, []);
 
@@ -46,27 +51,36 @@ export default function ProjectsShowcase() {
     <div className="section">
       <h1>My Projects</h1>
       <div className="projects-showcase-row">
-        <div ref={boxRef} className="section-box section-box--narrow section-box--carousel" style={boxHeight != null ? { height: `${boxHeight}px`, minHeight: `${boxHeight}px` } : undefined}>
+        <div
+          className="section-box section-box--narrow section-box--carousel"
+          style={heights[0] != null ? { maxHeight: heights[0] } : undefined}
+        >
           <ProjectBoxCarousel slides={crashCourseSlides} />
         </div>
         <div className="project-screenshot-wrap">
-          <img ref={screenshotRef} className="project-screenshot" src={crashScreenshot} alt="Crash Course" />
+          <img ref={screenshotRefs[0]} className="project-screenshot" src={crashScreenshot} alt="Crash Course" />
         </div>
       </div>
       <div className="projects-showcase-row">
         <div className="project-screenshot-wrap">
-          <img ref={screenshotRef} className="project-screenshot" src={HRScreenshot} alt="Smoke Trajectory Prediction" />
+          <img ref={screenshotRefs[1]} className="project-screenshot" src={HRScreenshot} alt="HiReady Continued" />
         </div>
-        <div ref={boxRef} className="section-box section-box--narrow section-box--carousel" style={boxHeight != null ? { height: `${boxHeight}px`, minHeight: `${boxHeight}px` } : undefined}>
+        <div
+          className="section-box section-box--narrow section-box--carousel"
+          style={heights[1] != null ? { maxHeight: heights[1] } : undefined}
+        >
           <ProjectBoxCarousel slides={HRSlides} />
         </div>
       </div>
       <div className="projects-showcase-row">
-        <div ref={boxRef} className="section-box section-box--narrow section-box--carousel" style={boxHeight != null ? { height: `${boxHeight}px`, minHeight: `${boxHeight}px` } : undefined}>
+        <div
+          className="section-box section-box--narrow section-box--carousel"
+          style={heights[2] != null ? { maxHeight: heights[2] } : undefined}
+        >
           <ProjectBoxCarousel slides={flusherSlides} />
         </div>
         <div className="project-screenshot-wrap">
-          <img ref={screenshotRef} className="project-screenshot" src={flusherScreenshot} alt="Flusher Finder" />
+          <img ref={screenshotRefs[2]} className="project-screenshot" src={flusherScreenshot} alt="Flusher Finder" />
         </div>
       </div>
     </div>
