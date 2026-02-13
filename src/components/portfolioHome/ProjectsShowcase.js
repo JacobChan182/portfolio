@@ -33,6 +33,7 @@ export default function ProjectsShowcase() {
       });
       window.removeEventListener("resize", syncHeights);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- screenshotRefs is derived from stable refs, refs don't change
   }, [screenshotRef0, screenshotRef1, screenshotRef2]);
 
   const crashCourseSlides = [
