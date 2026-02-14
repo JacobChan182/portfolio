@@ -10,8 +10,8 @@ export default function Home () {
     return (
     <div>
       <Welcome />
-      <Intro1 />
       <ProjectsShowcase />
+      <Intro1 />
       <Intro4 />
       <Intro2 />
       <Intro3 />

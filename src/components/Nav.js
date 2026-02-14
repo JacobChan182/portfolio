@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 function Nav() {
@@ -51,8 +51,9 @@ function Nav() {
           </ul>
         </nav>
       </div>
-
-      <div className="main-nav__right">
+      
+      <div className="main-nav__right" aria-hidden="true" />
+      {/* <div className="main-nav__right">
         <Link
           to="/contact"
           className="main-nav__cta"
@@ -60,7 +61,7 @@ function Nav() {
         >
           Get in touch
         </Link>
-      </div>
+      </div> */}
     </header>
   );
 }
