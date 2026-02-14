@@ -45,6 +45,14 @@ body { /* Or any color you want */
   pointer-events: none;
 }
 
+.Welcome-logo {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+  font-size: clamp(2.5rem, 12vmin, 5rem);
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.02em;
+}
+
 /*
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -1,18 +1,52 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import React, { useState, useEffect, useRef } from 'react';
 
+const SECTION_IDS = ['home', 'projects', 'about', 'contact'];
+const ACTIVE_THRESHOLD = 120; // px from top of viewport - section "in view" when its top is above this
+
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const scrollRafRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    const onScroll = () => {
+      const scrollY = window.scrollY ?? document.documentElement.scrollTop ?? document.body.scrollTop ?? 0;
+      setScrolled(scrollY > 20);
+      if (location.pathname !== '/') return;
+      const trigger = scrollY + ACTIVE_THRESHOLD;
+      let current = SECTION_IDS[SECTION_IDS.length - 1];
+      for (const id of SECTION_IDS) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        const sectionTop = rect.top + scrollY;
+        const sectionBottom = sectionTop + rect.height;
+        if (trigger >= sectionTop && trigger < sectionBottom) {
+          current = id;
+          break;
+        }
+      }
+      setActiveSection(current);
+    };
+    const run = () => {
+      onScroll();
+    };
+    window.addEventListener('scroll', run, { passive: true });
+    document.documentElement.addEventListener('scroll', run, { passive: true });
+    document.body.addEventListener('scroll', run, { passive: true });
+    requestAnimationFrame(run);
+    const t = setTimeout(run, 100);
+    return () => {
+      window.removeEventListener('scroll', run);
+      document.documentElement.removeEventListener('scroll', run);
+      document.body.removeEventListener('scroll', run);
+      clearTimeout(t);
+    };
+  }, [location.pathname]);
 
   const scrollToSection = (sectionId) => {
     setMobileOpen(false);
@@ -72,14 +106,6 @@ function Nav() {
       <div className="main-nav__left">
         <button
           type="button"
-          className="main-nav__logo-text"
-          onClick={() => scrollToSection('home')}
-          aria-label="Go to home"
-        >
-          {'<JacobChan />'}
-        </button>
-        <button
-          type="button"
           className="main-nav__toggle"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
@@ -98,7 +124,7 @@ function Nav() {
               <li key={sectionId}>
                 <button
                   type="button"
-                  className="main-nav__link"
+                  className={`main-nav__link ${location.pathname === '/' && activeSection === sectionId ? 'active' : ''}`}
                   onClick={() => scrollToSection(sectionId)}
                 >
                   {label}
