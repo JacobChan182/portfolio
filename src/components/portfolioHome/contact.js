@@ -28,19 +28,9 @@ export default function Contact() {
   ];
 
   return (
-    <section className="contact-section">
+    <section className="section contact-section">
       <h1>Let's connect!</h1>
-      <div
-        style={{
-          minHeight: "2vh",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "24px",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "40px",
-        }}
-      >
+      <div className="contact-section__grid">
         {cards.map((card, index) => (
           <Slide
             key={card.platform}

@@ -265,17 +265,37 @@ hr {
 }
 
 .contact-section {
-  width: 100%;
+  min-height: 100vh;
+}
+
+.contact-section__grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-section .contact-card {
+  width: 300px;
+  min-width: 280px;
+  background: rgba(212, 212, 212, 0.178);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3);
+  outline: 1px solid rgb(99, 99, 99);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: none;
+}
+
+.contact-section .contact-name,
+.contact-section .contact-username {
   color: white;
-  padding: 5rem 40px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
+}
+
+.contact-section .contact-username {
+  opacity: 0.9;
 }
 
 .App-link {
