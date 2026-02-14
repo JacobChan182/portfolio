@@ -79,6 +79,10 @@ hr {
   width: 100%;
 }
 
+.App-header.contact-header {
+  pointer-events: auto;
+}
+
 .section {
   width: 100%;
   display: flex;
