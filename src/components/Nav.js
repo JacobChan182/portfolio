@@ -72,6 +72,14 @@ function Nav() {
       <div className="main-nav__left">
         <button
           type="button"
+          className="main-nav__logo-text"
+          onClick={() => scrollToSection('home')}
+          aria-label="Go to home"
+        >
+          {'<JacobChan />'}
+        </button>
+        <button
+          type="button"
           className="main-nav__toggle"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}

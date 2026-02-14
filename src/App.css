@@ -393,6 +393,22 @@ hr {
   object-fit: contain;
 }
 
+.main-nav__logo-text {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.main-nav__logo-text:hover {
+  color: white;
+}
+
 .main-nav__toggle {
   display: none;
   flex-direction: column;
