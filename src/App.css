@@ -268,13 +268,29 @@ hr {
   min-height: 100vh;
 }
 
+.contact-section__layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.contact-section__form-wrap {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .contact-section__grid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
+  width: 100%;
+  max-width: min(72vw, 1080px);
+  box-sizing: border-box;
 }
 
 .contact-section .contact-card {
@@ -287,6 +303,7 @@ hr {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   border: none;
+  margin-bottom: 5px;
 }
 
 .contact-section .contact-name,

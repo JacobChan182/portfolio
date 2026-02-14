@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Slide } from "@mui/material";
 import ContactCard from "../portfolioContact/ContactCard";
+import ContactForm from "../portfolioContact/ContactForm";
 
 export default function Contact() {
   const [checked, setChecked] = useState(false);
@@ -30,19 +31,26 @@ export default function Contact() {
   return (
     <section className="section contact-section">
       <h1>Let's connect!</h1>
-      <div className="contact-section__grid">
-        {cards.map((card, index) => (
-          <Slide
-            key={card.platform}
-            direction="up"
-            in={checked}
-            timeout={300 + index * 200}
-          >
-            <div>
-              <ContactCard {...card} />
-            </div>
-          </Slide>
-        ))}
+      <div className="contact-section__layout">
+        <div className="contact-section__grid">
+          {cards.map((card, index) => (
+            <Slide
+              key={card.platform}
+              direction="up"
+              in={checked}
+              timeout={300 + index * 200}
+            >
+              <div>
+                <ContactCard {...card} />
+              </div>
+            </Slide>
+          ))}
+        </div>
+        <Slide direction="up" in={checked} timeout={500}>
+          <div className="section-box contact-section__form-wrap">
+            <ContactForm />
+          </div>
+        </Slide>
       </div>
     </section>
   );

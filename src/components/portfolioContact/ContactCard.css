@@ -43,12 +43,7 @@
 }
 
 .contact-name {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #111827;
-}
-
-.contact-username {
-  font-size: 0.9rem;
-  color: #6b7280;
 }
