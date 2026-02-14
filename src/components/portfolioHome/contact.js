@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Slide } from "@mui/material";
-import ContactCard from "../components/portfolioContact/ContactCard";
+import ContactCard from "../portfolioContact/ContactCard";
 
 export default function Contact() {
   const [checked, setChecked] = useState(false);
@@ -28,7 +28,7 @@ export default function Contact() {
   ];
 
   return (
-    <header className="App-header contact-header">
+    <section className="contact-section">
       <h1>Let's connect!</h1>
       <div
         style={{
@@ -54,6 +54,6 @@ export default function Contact() {
           </Slide>
         ))}
       </div>
-    </header>
+    </section>
   );
 }
