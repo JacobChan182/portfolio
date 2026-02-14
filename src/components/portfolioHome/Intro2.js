@@ -1,7 +1,7 @@
 function Intro2() {
     return (
         <div className="section">
-                <h1>Personal Interests</h1>
+                <h2>Personal Interests</h2>
             <div className="section-box">
                 <h3>I have a lot of personal interests so this will span a couple pages!</h3>
                 <div>

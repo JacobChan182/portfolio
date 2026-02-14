@@ -303,7 +303,6 @@ hr {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   border: none;
-  margin-bottom: 5px;
 }
 
 .contact-section .contact-name,
@@ -338,8 +337,10 @@ hr {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  min-height: 8vh;
   padding: 1rem 2rem;
   gap: 1.5rem;
+  box-sizing: border-box;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 

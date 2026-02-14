@@ -35,6 +35,7 @@ export default function ContactForm() {
 
   return (
     <form ref={form} onSubmit={sendEmail} className="contact-form">
+      <label className="contact-form__label">Send me a message!</label>
       <input type="text" name="from_name" placeholder="Your Name" required disabled={sending} />
       <input
         type="email"

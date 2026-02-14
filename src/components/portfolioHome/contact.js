@@ -30,7 +30,7 @@ export default function Contact() {
 
   return (
     <section className="section contact-section">
-      <h1>Let's connect!</h1>
+      <h2>Let's connect!</h2>
       <div className="contact-section__layout">
         <div className="contact-section__grid">
           {cards.map((card, index) => (

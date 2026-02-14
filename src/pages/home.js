@@ -1,4 +1,3 @@
-import Footer from '../components/Footer';
 import Welcome from '../components/portfolioHome/Welcome';
 import Intro1 from '../components/portfolioHome/Intro1';
 import Intro2 from '../components/portfolioHome/Intro2';
@@ -17,7 +16,6 @@ export default function Home () {
       <Intro2 />
       <Intro3 />
       <section id="contact"><Contact /></section>
-      <Footer />
     </div>
   );
 }
