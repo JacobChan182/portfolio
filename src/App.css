@@ -269,6 +269,17 @@ hr {
   .projects-showcase-row--hr .section-box--carousel {
     order: 1;
   }
+  .section-box--carousel {
+    overflow-y: auto;
+    max-height: 40vh;
+  }
+  .project-box-carousel__track {
+    transform: none !important;
+  }
+  .project-box-carousel__slide {
+    height: auto;
+    min-height: auto;
+  }
   .section-box--narrow,
   .projects-showcase-row .project-screenshot-wrap {
     flex: 1 1 auto;
