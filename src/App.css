@@ -263,6 +263,12 @@ hr {
   .projects-showcase-row {
     flex-direction: column;
   }
+  .projects-showcase-row--hr .project-screenshot-wrap {
+    order: 2;
+  }
+  .projects-showcase-row--hr .section-box--carousel {
+    order: 1;
+  }
   .section-box--narrow,
   .projects-showcase-row .project-screenshot-wrap {
     flex: 1 1 auto;

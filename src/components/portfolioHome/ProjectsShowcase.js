@@ -93,7 +93,7 @@ export default function ProjectsShowcase() {
           </a>
         </div>
       </div>
-      <div ref={rowRef1} className={`projects-showcase-row ${visibleRows[1] ? "projects-showcase-row--visible" : ""}`}>
+      <div ref={rowRef1} className={`projects-showcase-row projects-showcase-row--hr ${visibleRows[1] ? "projects-showcase-row--visible" : ""}`}>
         <div className="project-screenshot-wrap">
           <a target="_blank" rel="noopener noreferrer"href="http://hi-ready-continued.vercel.app" className="project-screenshot-link">
             <img ref={screenshotRefs[1]} className="project-screenshot" src={HRScreenshot} alt="HiReady Continued" />
