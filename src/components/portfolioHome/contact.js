@@ -32,8 +32,9 @@ export default function Contact() {
     <section className="section contact-section">
       <h2>Let's connect!</h2>
       <div className="contact-section__layout">
-        <div className="contact-section__grid">
-          {cards.map((card, index) => (
+        <div className="section-box contact-section__cards-box">
+          <div className="contact-section__grid">
+            {cards.map((card, index) => (
             <Slide
               key={card.platform}
               direction="up"
@@ -44,7 +45,8 @@ export default function Contact() {
                 <ContactCard {...card} />
               </div>
             </Slide>
-          ))}
+            ))}
+          </div>
         </div>
         <Slide direction="up" in={checked} timeout={500}>
           <div className="section-box contact-section__form-wrap">

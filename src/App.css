@@ -53,13 +53,6 @@ body { /* Or any color you want */
   letter-spacing: 0.02em;
 }
 
-/*
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-*/
 
 hr {
   border: 0;
@@ -270,6 +263,21 @@ hr {
     flex: 1 1 auto;
     max-width: none;
   }
+
+  .contact-section__grid {
+    justify-content: center;
+  }
+  .contact-section__grid > * {
+    flex: 1 1 100%;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .contact-section .contact-card {
+    width: 100%;
+    min-width: 0;
+    max-width: min(280px, 100%);
+  }
 }
 
 .contact-section {
@@ -282,10 +290,27 @@ hr {
   align-items: center;
   gap: 3rem;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-section__form-wrap {
   width: 100%;
+  max-width: min(72vw, 1080px);
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.contact-section__cards-box {
+  width: 100%;
+  max-width: min(72vw, 1080px);
+  margin-left: auto;
+  margin-right: auto;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+  backdrop-filter: none;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -297,7 +322,6 @@ hr {
   align-items: center;
   gap: 1.5rem;
   width: 100%;
-  max-width: min(72vw, 1080px);
   box-sizing: border-box;
 }
 
@@ -320,6 +344,29 @@ hr {
 
 .contact-section .contact-username {
   opacity: 0.9;
+}
+
+/* Contact mobile: dedicated block after base styles so overrides apply */
+@media (max-width: 768px) {
+  .contact-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+  }
+  .contact-section .contact-section__layout {
+    width: 100%;
+    max-width: min(72vw, 1080px);
+    min-width: 0;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .contact-section .contact-section__cards-box,
+  .contact-section .contact-section__form-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
 }
 
 .App-link {
@@ -520,7 +567,7 @@ hr {
 
 @media (max-width: 768px) {
   .main-nav {
-    padding: 1rem 1.25rem;
+    display: none;
   }
 
   .main-nav__toggle {
