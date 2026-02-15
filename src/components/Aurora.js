@@ -34,7 +34,7 @@ export const Aurora = () => {
         >
             <div className="stars-bg">
                 <Canvas>
-                    <Stars radius={70} count={1500} factor={3} saturation={0.12} speed={0.5} fade={true}/>
+                    <Stars radius={27} count={1500} factor={4} saturation={0.12} speed={0.5} fade={true}/>
                 </Canvas>
             </div>
         </motion.section>

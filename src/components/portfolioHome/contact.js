@@ -30,7 +30,7 @@ export default function Contact() {
 
   return (
     <section className="section contact-section">
-      <h2>Let's connect!</h2>
+      <h2>Let's Connect!</h2>
       <div className="contact-section__layout">
         <div className="section-box contact-section__cards-box">
           <div className="contact-section__grid">

@@ -1,7 +1,7 @@
 function Intro4() {
     return (
         <div className="section">
-                <h2>Please hire me!</h2>
+                <h2>Please Hire Me!</h2>
             <div className="section-box">
                 <div>
 
