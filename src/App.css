@@ -255,6 +255,11 @@ hr {
 }
 
 @media (max-width: 768px) {
+  .Welcome-logo {
+    font-size: clamp(2rem, 9.6vmin, 4rem);
+    max-width: 85vw;
+    letter-spacing: -0.01em;
+  }
   .projects-showcase-row {
     flex-direction: column;
   }
