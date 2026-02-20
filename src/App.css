@@ -305,6 +305,21 @@ hr {
   background: #e8e8e8;
 }
 
+.guitar-images {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.guitar-images img {
+  height: 220px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
 @media (max-width: 768px) {
   .intro2-row {
     flex-direction: column;

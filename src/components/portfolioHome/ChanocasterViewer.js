@@ -65,6 +65,7 @@ function ChanocasterViewer() {
           enableZoom={false}
           minDistance={1}
           maxDistance={8}
+          minPolarAngle={Math.PI / 2}
           maxPolarAngle={Math.PI / 2}
           onStart={() => { userHasGrabbedRef.current = true; }}
           onEnd={() => { userHasGrabbedRef.current = false; }}
