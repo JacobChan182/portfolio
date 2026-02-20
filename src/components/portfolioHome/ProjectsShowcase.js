@@ -1,8 +1,12 @@
 import React, { useRef, useEffect, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import crashScreenshot from '../images/crashScreenshot.png';
 import HRScreenshot from '../images/HRScreenshot.png';
 import flusherScreenshot from '../images/flusherScreenshot.png';
 import ProjectBoxCarousel from "./ProjectBoxCarousel";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectsShowcase() {
   const screenshotRef0 = useRef(null);
@@ -14,28 +18,43 @@ export default function ProjectsShowcase() {
   const rowRef2 = useRef(null);
   const rowRefs = [rowRef0, rowRef1, rowRef2];
   const [heights, setHeights] = useState([null, null, null]);
-  const [visibleRows, setVisibleRows] = useState([false, false, false]);
 
   useEffect(() => {
-    const observers = rowRefs.map((ref, i) => {
-      const el = ref.current;
-      if (!el) return null;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          setVisibleRows((prev) => {
-            const next = [...prev];
-            next[i] = entry.isIntersecting;
-            return next;
-          });
+    const scrollTriggers = [];
+    rowRefs.forEach((ref) => {
+      const row = ref.current;
+      if (!row) return;
+      const first = row.firstElementChild;
+      const last = row.lastElementChild;
+      if (!first || !last) return;
+      const isSingleChild = first === last;
+      const t1 = gsap.fromTo(first, { opacity: 0, x: -60 }, {
+        opacity: 1,
+        x: 0,
+        scrollTrigger: {
+          trigger: row,
+          start: 'top 85%',
+          end: 'top 35%',
+          scrub: 1,
         },
-        { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
-      );
-      obs.observe(el);
-      return obs;
+      });
+      scrollTriggers.push(t1.scrollTrigger);
+      if (!isSingleChild) {
+        const t2 = gsap.fromTo(last, { opacity: 0, x: 60 }, {
+          opacity: 1,
+          x: 0,
+          scrollTrigger: {
+            trigger: row,
+            start: 'top 85%',
+            end: 'top 35%',
+            scrub: 1,
+          },
+        });
+        scrollTriggers.push(t2.scrollTrigger);
+      }
     });
-    return () => observers.forEach((obs) => obs?.disconnect());
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- rowRefs is derived from stable refs
-  }, [rowRef0, rowRef1, rowRef2]);
+    return () => scrollTriggers.forEach((st) => st?.kill());
+  }, []);
 
   useEffect(() => {
     const syncHeights = () => {
@@ -80,7 +99,7 @@ export default function ProjectsShowcase() {
   return (
     <div className="section">
       <h1>My Projects</h1>
-      <div ref={rowRef0} className={`projects-showcase-row ${visibleRows[0] ? "projects-showcase-row--visible" : ""}`}>
+      <div ref={rowRef0} className="projects-showcase-row">
         <div
           className="section-box section-box--narrow section-box--carousel"
           style={heights[0] != null ? { maxHeight: heights[0] } : undefined}
@@ -93,7 +112,7 @@ export default function ProjectsShowcase() {
           </a>
         </div>
       </div>
-      <div ref={rowRef1} className={`projects-showcase-row projects-showcase-row--hr ${visibleRows[1] ? "projects-showcase-row--visible" : ""}`}>
+      <div ref={rowRef1} className="projects-showcase-row projects-showcase-row--hr">
         <div className="project-screenshot-wrap">
           <a target="_blank" rel="noopener noreferrer"href="http://hi-ready-continued.vercel.app" className="project-screenshot-link">
             <img ref={screenshotRefs[1]} className="project-screenshot" src={HRScreenshot} alt="HiReady Continued" />
@@ -106,7 +125,7 @@ export default function ProjectsShowcase() {
           <ProjectBoxCarousel slides={HRSlides} />
         </div>
       </div>
-      <div ref={rowRef2} className={`projects-showcase-row ${visibleRows[2] ? "projects-showcase-row--visible" : ""}`}>
+      <div ref={rowRef2} className="projects-showcase-row">
         <div
           className="section-box section-box--narrow section-box--carousel"
           style={heights[2] != null ? { maxHeight: heights[2] } : undefined}

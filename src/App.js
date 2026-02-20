@@ -6,18 +6,20 @@ import './App.css';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Aurora from './components/Aurora';
 import Nav from './components/Nav';
-
+import SmoothScroll from './components/SmoothScroll';
 
 function App() {
   return (
     <Router>
-      <Aurora />
-      <Nav />
-      <Routes>
+      <SmoothScroll>
+        <Aurora />
+        <Nav />
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/fun-corner" element={<FunCorner />} />
-      </Routes>
+        </Routes>
+      </SmoothScroll>
     </Router>
   )
 }
