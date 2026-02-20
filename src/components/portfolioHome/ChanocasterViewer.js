@@ -36,12 +36,13 @@ function Model() {
 
 function ChanocasterViewer() {
   return (
-    <div className="intro2-viewer">
+    <div className="intro2-viewer" style={{ background: '#d8d8d8' }}>
       <Canvas
         camera={{ position: [0, 0.2, 2], fov: 55 }}
-        gl={{ antialias: true, alpha: true }}
+        gl={{ antialias: true, alpha: false }}
+        style={{ background: '#d8d8d8' }}
       >
-        <color attach="background" args={['transparent']} />
+        <color attach="background" args={['#d8d8d8']} />
         <ambientLight intensity={0.6} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
         <directionalLight position={[-3, 2, -2]} intensity={0.4} />
