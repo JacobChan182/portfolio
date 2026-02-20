@@ -27,9 +27,11 @@ function Intro2() {
 
       </div>
       <div className="guitar-images">
-        <img src={guitar1} alt="Chanocaster guitar" />
-        <img src={guitar2} alt="Chanocaster guitar" />
         <img src={guitar3} alt="Chanocaster guitar" />
+        <img src={guitar2} alt="Chanocaster guitar" />
+        <div className="guitar-img-1-wrap">
+          <img src={guitar1} alt="Chanocaster guitar" className="guitar-img-1" />
+        </div>
       </div>
     </div>
   );
