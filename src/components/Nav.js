@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLenis } from './SmoothScroll';
 
 const SECTION_IDS = ['home', 'projects', 'about', 'contact'];
 const ACTIVE_THRESHOLD = 120; // px from top of viewport - section "in view" when its top is above this
@@ -8,7 +9,7 @@ function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const scrollRafRef = useRef(null);
+  const lenisRef = useLenis();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -50,47 +51,27 @@ function Nav() {
 
   const scrollToSection = (sectionId) => {
     setMobileOpen(false);
-    if (scrollRafRef.current != null) {
-      cancelAnimationFrame(scrollRafRef.current);
-      scrollRafRef.current = null;
-    }
-    const runScroll = () => {
+    const lenis = lenisRef?.current;
+    if (lenis) {
       const element = document.getElementById(sectionId);
-      if (!element) return;
-
-      const startY = Math.max(
-        window.scrollY ?? 0,
-        document.documentElement.scrollTop,
-        document.body.scrollTop
-      );
-      const targetY = element.getBoundingClientRect().top + startY;
-      const distance = targetY - startY;
-      const duration = 700;
-      const startTime = performance.now();
-
-      const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
-
-      const tick = (now) => {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = easeOutQuart(progress);
-        const y = Math.round(startY + distance * eased);
-        window.scrollTo(0, y);
-        document.documentElement.scrollTop = y;
-        document.body.scrollTop = y;
-        if (progress < 1) {
-          scrollRafRef.current = requestAnimationFrame(tick);
+      if (element) {
+        if (location.pathname !== '/') {
+          navigate('/');
+          setTimeout(() => lenis.scrollTo(element), 200);
         } else {
-          scrollRafRef.current = null;
+          lenis.scrollTo(element);
         }
-      };
-      scrollRafRef.current = requestAnimationFrame(tick);
-    };
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(runScroll, 200);
+      }
     } else {
-      runScroll();
+      const element = document.getElementById(sectionId);
+      if (element) {
+        if (location.pathname !== '/') {
+          navigate('/');
+          setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 200);
+        } else {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     }
   };
 
