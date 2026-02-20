@@ -11,9 +11,9 @@ export default function Home () {
     <div>
       <section id="home"><Welcome /></section>
       <section id="projects"><ProjectsShowcase /></section>
+      <Intro2 />
       <section id="about"><Intro1 /></section>
       <Intro4 />
-      <Intro2 />
       <Intro3 />
       <section id="contact"><Contact /></section>
     </div>

@@ -6,7 +6,7 @@ import guitar3 from '../assets/images/guitar/IMG_2178.jpg';
 function Intro2() {
   return (
     <div className="section">
-      <h2>Music</h2>
+      <h1>Music</h1>
       <div className="intro2-row">
         <div className="intro2-left section-box">
             <h2>The Blink-650 Chanocaster</h2>
