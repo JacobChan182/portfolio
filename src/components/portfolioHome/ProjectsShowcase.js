@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import crashScreenshot from '../images/crashScreenshot.png';
-import HRScreenshot from '../images/HRScreenshot.png';
-import flusherScreenshot from '../images/flusherScreenshot.png';
+import crashScreenshot from '../assets/images/crashScreenshot.png';
+import HRScreenshot from '../assets/images/HRScreenshot.png';
+import flusherScreenshot from '../assets/images/flusherScreenshot.png';
 import ProjectBoxCarousel from "./ProjectBoxCarousel";
 
 gsap.registerPlugin(ScrollTrigger);
