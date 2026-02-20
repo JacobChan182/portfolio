@@ -54,6 +54,7 @@ export default function ProjectsShowcase() {
       }
     });
     return () => scrollTriggers.forEach((st) => st?.kill());
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- run once on mount; row refs are stable
   }, []);
 
   useEffect(() => {
