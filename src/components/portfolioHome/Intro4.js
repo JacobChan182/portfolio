@@ -11,7 +11,7 @@ function Intro4() {
                 
                 <p>I’m eligible to work in the United States and Canada, and I’m able to work in Toronto, Ottawa, or the San Francisco Bay Area without the need for relocation assistance.</p>
 
-                <p>If you’re in the Greater Toronto Area during the school year or in the San Francisco Bay Area during the summer, let’s meet up.</p>
+                <p>If you’re in the Greater Toronto Area during the school year or in the San Francisco Bay Area during the summer, please feel free to reach out to me through one of the contact methods below!</p>
                 </div>
             </div>
         </div>
