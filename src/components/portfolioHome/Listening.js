@@ -29,9 +29,10 @@ const item = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
   },
 };
+
+const coverTransition = { duration: 0.08 };
 
 export default function Listening() {
   return (
@@ -56,6 +57,8 @@ export default function Listening() {
             aria-label={label}
             title={label}
             variants={item}
+            transition={coverTransition}
+            whileHover={{ scale: 1.04, transition: coverTransition }}
           >
             {imageUrl ? (
               <img
