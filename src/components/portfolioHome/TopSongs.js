@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './TopSongs.css';
 
 // Add your tracks: imageUrl = artwork URL, spotifyUrl = link to track on Spotify, title = song name, artist = artist name
@@ -15,13 +16,38 @@ const TOP_SONGS = [
   { id: 10, rank: 10, title: 'Viva Las Vengeance', artist: 'Panic! At The Disco', imageUrl: 'https://i.scdn.co/image/ab67616d0000b273c6ca149d27c58bb9378b65f9', spotifyUrl: 'https://open.spotify.com/album/25DhBz5cckEAFcivcSzSTo?si=L9MPcLdgTO6jvTtQHoo78w' },
 ];
 
+const listContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.06, delayChildren: 0.1 },
+  },
+};
+
+const listItem = {
+  hidden: { opacity: 0, x: -24 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
+
 export default function TopSongs() {
   return (
-    <div className="top-songs">
-      <h1>The Chanboard Top 10</h1>
-      <ol className="top-songs__list">
+    <motion.div
+      className="top-songs"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-60px' }}
+      variants={listContainer}
+    >
+      <motion.h1 variants={listItem} style={{ marginBottom: '1rem' }}>
+        The Chanboard Top 10
+      </motion.h1>
+      <motion.ol className="top-songs__list" variants={listContainer}>
         {TOP_SONGS.map(({ id, rank, title, artist, imageUrl, spotifyUrl }) => (
-          <li key={id} className="top-songs__item">
+          <motion.li key={id} className="top-songs__item" variants={listItem}>
             <a
               className="top-songs__link"
               href={spotifyUrl}
@@ -43,9 +69,9 @@ export default function TopSongs() {
                 <span className="top-songs__artist">{artist}</span>
               </span>
             </a>
-          </li>
+          </motion.li>
         ))}
-      </ol>
-    </div>
+      </motion.ol>
+    </motion.div>
   );
 }

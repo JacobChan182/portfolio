@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Listening.css';
 
 // Add your albums: imageUrl = album art URL, spotifyUrl = link to album/playlist on Spotify, label = name (for alt text)
@@ -15,13 +16,38 @@ const ALBUMS = [
   { id: 10, label: 'Say It Like You Mean It', imageUrl: 'https://i.scdn.co/image/ab67616d0000b27339fedf61abad94ee76ff6a7f', spotifyUrl: 'https://open.spotify.com/album/72ogyoH8DeqTMLYhFwgVx6' },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.06, delayChildren: 0.08 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
+
 export default function Listening() {
   return (
-    <div className="listening">
-      <h1>The Chanboard Album 10</h1>
-      <div className="listening__grid">
+    <motion.div
+      className="listening"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-60px' }}
+      variants={container}
+    >
+      <motion.h1 variants={item} style={{ marginBottom: '1rem' }}>
+        The Chanboard Album 10
+      </motion.h1>
+      <motion.div className="listening__grid" variants={container}>
         {ALBUMS.map(({ id, label, imageUrl, spotifyUrl }) => (
-          <a
+          <motion.a
             key={id}
             className="listening__cover"
             href={spotifyUrl}
@@ -29,6 +55,7 @@ export default function Listening() {
             rel="noopener noreferrer"
             aria-label={label}
             title={label}
+            variants={item}
           >
             {imageUrl ? (
               <img
@@ -39,9 +66,9 @@ export default function Listening() {
             ) : (
               <span className="listening__cover-placeholder">{label}</span>
             )}
-          </a>
+          </motion.a>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
