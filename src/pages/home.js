@@ -13,11 +13,11 @@ export default function Home () {
     return (
     <div>
       <section id="home"><Welcome /></section>
-      <section id="projects"><ProjectsShowcase /></section>
       <section id="about">
         <Intro1 />
         <Intro4 />
       </section>
+      <section id="projects"><ProjectsShowcase /></section>
 
       <section id="fun-stuff">
         <FunStuff />

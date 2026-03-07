@@ -77,8 +77,8 @@ function Nav() {
 
   const navLinks = [
     { sectionId: 'home', label: 'Home' },
-    { sectionId: 'projects', label: 'Projects' },
     { sectionId: 'about', label: 'About Me' },
+    { sectionId: 'projects', label: 'Projects' },
     { sectionId: 'fun-stuff', label: 'Fun Stuff' },
     { sectionId: 'contact', label: 'Contact' },
   ];
