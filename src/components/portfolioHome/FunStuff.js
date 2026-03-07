@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-const FADE_DISTANCE = 300; // px over which opacity goes from 0 to 1 as element enters viewport
-
 function FunStuff({ fixed = false }) {
     const [opacity, setOpacity] = useState(0);
     const elRef = useRef(null);

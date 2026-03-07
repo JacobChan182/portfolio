@@ -14,16 +14,20 @@ export default function Home () {
     <div>
       <section id="home"><Welcome /></section>
       <section id="projects"><ProjectsShowcase /></section>
-      <section id="about"><Intro1 /></section>
-      <Intro4 />
-
-      <section id="fun-stuff"><FunStuff /></section>
-      <Chanocaster />
-      <section className="section">
-        <Listening />
+      <section id="about">
+        <Intro1 />
+        <Intro4 />
       </section>
-      <section className="section">
-        <TopSongs />
+
+      <section id="fun-stuff">
+        <FunStuff />
+        <Chanocaster />
+        <section className="section">
+          <Listening />
+        </section>
+        <section className="section">
+          <TopSongs />
+        </section>
       </section>
 
       <section id="contact"><Contact /></section>
