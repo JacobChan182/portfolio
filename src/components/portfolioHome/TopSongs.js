@@ -12,7 +12,7 @@ const TOP_SONGS = [
   { id: 6, rank: 6, title: 'Sonderland', artist: 'Neck Deep', imageUrl: 'https://i.scdn.co/image/ab67616d0000b2733a278953d20b499818ed7dae', spotifyUrl: 'https://open.spotify.com/track/04XjMCR9EiZeKIrR0LZcjq?si=62c0228b472147ae' },
   { id: 7, rank: 7, title: 'Aliens Exist', artist: 'blink-182', imageUrl: 'https://i.scdn.co/image/ab67616d0000b2736da502e35a7a3e48de2b0f74', spotifyUrl: 'https://open.spotify.com/track/3nqm3DdVskqbHhmb8S8hMd?si=babb22e8118b4387' },
   { id: 8, rank: 8, title: 'Speak Of The Devil', artist: 'Sum 41', imageUrl: 'https://i.scdn.co/image/ab67616d0000b273dad860cbc913cbd81a438b20', spotifyUrl: 'https://open.spotify.com/track/3zdg1IMqKog1YNRpTjKDOB?si=8ba99d46958d4432' },
-  { id: 9, rank: 9, title: 'Title Fight', artist: 'Blitz Kids', imageUrl: 'https://i.scdn.co/image/ab67616d0000b27391e1720b2821eade74750236', spotifyUrl: 'https://open.spotify.com/track/7rJUpC5nJzM0DCeg5OSktQ?si=dbea8462efbf4db8' },
+  { id: 9, rank: 9, title: 'All I Want Is Everything', artist: 'Blitz Kids', imageUrl: 'https://i.scdn.co/image/ab67616d0000b27391e1720b2821eade74750236', spotifyUrl: 'https://open.spotify.com/track/6I053hglsw7NMAbA3o23ll?si=e751314e963847ab' },
   { id: 10, rank: 10, title: 'Viva Las Vengeance', artist: 'Panic! At The Disco', imageUrl: 'https://i.scdn.co/image/ab67616d0000b273c6ca149d27c58bb9378b65f9', spotifyUrl: 'https://open.spotify.com/album/25DhBz5cckEAFcivcSzSTo?si=L9MPcLdgTO6jvTtQHoo78w' },
 ];
 
