@@ -2,7 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { useLenis } from './SmoothScroll';
 
-const SECTION_IDS = ['home', 'projects', 'about', 'contact'];
+const SECTION_IDS = ['home', 'projects', 'about', 'fun-stuff', 'contact'];
 const ACTIVE_THRESHOLD = 120; // px from top of viewport - section "in view" when its top is above this
 
 function Nav() {
@@ -79,6 +79,7 @@ function Nav() {
     { sectionId: 'home', label: 'Home' },
     { sectionId: 'projects', label: 'Projects' },
     { sectionId: 'about', label: 'About Me' },
+    { sectionId: 'fun-stuff', label: 'Fun Stuff' },
     { sectionId: 'contact', label: 'Contact' },
   ];
 

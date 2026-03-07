@@ -50,7 +50,7 @@ function Intro1() {
                 <div>
                 <p>My name is Jacob Chan and I'm from the San Francisco Bay Area. I'm currently a student at the University of Toronto pursuing a major in Computer Science and a double minor in Statistics and Mathematics.</p>
 <p>Music and coding are two of my passions, and I see a lot of similarities between them. Both feel like creative outlets where I get to build things from scratch. They take a ton of focus, and are extremely rewarding when everything finally comes together. </p>
-<p> Right now, I’m all about learning, both in the classroom and hopefully in a work environment, and I look forward to applying my skills in a real-world, large scale environment.</p>
+<p> Right now, I’m all about learning, both in and out of the classroom, and I look forward to applying my skills to a real-world, large-scale environment.</p>
 <p>Thanks for stopping by!</p>
                 </div>
             </div>

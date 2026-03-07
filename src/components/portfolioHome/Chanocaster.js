@@ -8,7 +8,7 @@ import guitar3 from '../assets/images/guitar/IMG_2178.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Intro2() {
+function Chanocaster() {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const rowRef = useRef(null);
@@ -101,10 +101,9 @@ function Intro2() {
 
   return (
     <div ref={sectionRef} className="section">
-      <h1 ref={headingRef}>Music</h1>
+      <h1 ref={headingRef}>The Blink-650 Chanocaster</h1>
       <div ref={rowRef} className="intro2-row">
         <div className="intro2-left section-box">
-            <h2>The Blink-650 Chanocaster</h2>
             <ul>
                 <li>Modified Squier Sonic Flash Pink Hardtail</li>
                 <li>Seymour Duncan SH-8 Invader Pickup</li>
@@ -132,4 +131,4 @@ function Intro2() {
   );
 }
 
-export default Intro2;
+export default Chanocaster;
